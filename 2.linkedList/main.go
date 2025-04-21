@@ -5,6 +5,7 @@ package main
 func main() {
 
 	// 初始化各个节点
+	// 每个节点的传值是一个int类型
 	n0 := NewListNode(1)
 	n1 := NewListNode(3)
 	n2 := NewListNode(2)
@@ -12,6 +13,7 @@ func main() {
 	n4 := NewListNode(4)
 
 	// 构建节点之间的引用
+	// 每个结构体的Next，存放下一个指向的结构体的地址
 	n0.Next = n1
 	n1.Next = n2
 	n2.Next = n3
