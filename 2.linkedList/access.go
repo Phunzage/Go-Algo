@@ -3,7 +3,7 @@
 // 访问链表中索引为 index 的节点
 package main
 
-// 传入头节点的地址，要访问的节点的“下标”
+// 传入链表，要访问的节点的“下标”
 func access(head *ListNode, index int) *ListNode {
 	// 开始遍历链表节点
 	for i := 0; i < index; i++ {
