@@ -14,9 +14,10 @@ func findNode(head *ListNode, target int) int {
 		if head.Val == target {
 			return index
 		}
-
+		// 去往下一个节点，对应“下标” + 1
 		head = head.Next
 		index++
 	}
+	// 未找到，返回 -1
 	return -1
 }
