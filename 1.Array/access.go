@@ -11,3 +11,5 @@ func randomAccess(nums []int) (randomNum int) {
 	randomNum = nums[randomIndex]
 	return
 }
+
+// 在数组中访问元素非常高效，我们可以在 O(1) 时间内随机访问数组中的任意一个元素。
