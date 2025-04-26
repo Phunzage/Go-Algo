@@ -100,3 +100,9 @@ func (l *myList) extendCapacity() {
 	// 更新列表容量
 	l.arrCapacity = len(l.arr)
 }
+
+/* 返回有效长度的列表 */
+func (l *myList) toArray() []int {
+	// 仅转换有效长度范围内的列表元素
+	return l.arr[:l.arrSize]
+}
