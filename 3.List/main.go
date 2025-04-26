@@ -2,7 +2,10 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
 
@@ -52,4 +55,13 @@ func main() {
 	for _, num := range nums {
 		count += num
 	}
+
+	/* 拼接两个列表 */
+	nums2 := []int{6, 8, 7, 10, 9}
+	nums = append(nums, nums2...) // 将列表 nums1 拼接到 nums 之后
+	fmt.Println(nums)
+
+	// 排序列表
+	sort.Ints(nums)
+	fmt.Println(nums)
 }
