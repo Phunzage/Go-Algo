@@ -19,4 +19,17 @@ func main() {
 	// 访问栈顶元素
 	peek := stack[len(stack)-1]
 	fmt.Println(peek)
+
+	// 元素出栈
+	pop := stack[len(stack)-1]
+	stack = stack[:len(stack)-1]
+	fmt.Println(pop)
+
+	// 获取栈的长度
+	size := len(stack)
+	fmt.Println(size)
+
+	// 判断是否为空
+	isEmpty := len(stack) == 0
+	fmt.Println(isEmpty)
 }
