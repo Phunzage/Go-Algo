@@ -32,6 +32,15 @@ func (s *linkedListStack) pop(value int) any {
 	return e.Value
 }
 
+// 访问栈顶元素
+func (s *linkedListStack) peek() any {
+	if s.isEmpty() {
+		return nil
+	}
+	e := s.data.Back()
+	return e.Value
+}
+
 // 判断栈是否为空
 func (s *linkedListStack) isEmpty() bool {
 	return s.data.Len() == 0
