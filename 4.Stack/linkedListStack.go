@@ -16,3 +16,10 @@ func newlinkedListStack() *linkedListStack {
 		data: list.New(),
 	}
 }
+
+// 入栈
+func (s *linkedListStack) push(value int) {
+	s.data.PushBack(value)
+}
+
+// 出栈
