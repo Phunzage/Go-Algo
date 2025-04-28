@@ -23,3 +23,16 @@ func (s *linkedListStack) push(value int) {
 }
 
 // 出栈
+func (s *linkedListStack) pop(value int) any {
+	if s.isEmpty() {
+		return nil
+	}
+	e := s.data.Back()
+	s.data.Remove(e)
+	return e.Value
+}
+
+// 判断栈是否为空
+func (s *linkedListStack) isEmpty() bool {
+	return s.data.Len() == 0
+}
