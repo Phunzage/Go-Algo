@@ -41,7 +41,17 @@ func (s *linkedListStack) peek() any {
 	return e.Value
 }
 
+// 获取栈的长度
+func (s *linkedListStack) size() int {
+	return s.data.Len()
+}
+
 // 判断栈是否为空
 func (s *linkedListStack) isEmpty() bool {
 	return s.data.Len() == 0
+}
+
+// 获取list用于打印
+func (s *linkedListStack) toList() *list.List {
+	return s.data
 }
