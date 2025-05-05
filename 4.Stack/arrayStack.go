@@ -24,3 +24,30 @@ func (s *arrayStack) size() int {
 func (s *arrayStack) isEmpty() bool {
 	return s.size() == 0
 }
+
+// 入栈
+func (s *arrayStack) push(v int) {
+	// 切片会自动扩容
+	s.data = append(s.data, v)
+}
+
+// 出栈
+func (s *arrayStack) pop() any {
+	val := s.peek()
+	s.data = s.data[:len(s.data)-1]
+	return val
+}
+
+// 获取栈顶元素
+func (s *arrayStack) peek() any {
+	if s.isEmpty() {
+		return nil
+	}
+	val := s.data[len(s.data)-1]
+	return val
+}
+
+// 获取 Slice 用于打印
+func (s *arrayStack) toSlice() []int {
+	return s.data
+}
