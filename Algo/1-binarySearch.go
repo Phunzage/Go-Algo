@@ -23,7 +23,8 @@ func binarySearch(nums []int, target int) int {
 func main() {
 	nums := []int{1, 3, 6, 8, 12, 15, 23, 26, 31, 35}
 	var t int
+	fmt.Print("请输入要查找的数字：")
 	fmt.Scanf("%d", &t)
 	res := binarySearch(nums, t)
-	fmt.Println(res)
+	fmt.Printf("索引位置：%d\n", res)
 }
