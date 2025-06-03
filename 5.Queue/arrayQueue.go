@@ -1,7 +1,7 @@
 package main
 
 // 基于环形数组实现的队列
-type arrayqQueue struct {
+type arrayQueue struct {
 	nums        []int // 用于存储队列元素的数组
 	front       int   // 队首指针，指向队首元素
 	queSize     int   // 队列长度
@@ -9,8 +9,8 @@ type arrayqQueue struct {
 }
 
 // 初始化队列
-func newArrayQueue(queCapacity int) *arrayqQueue {
-	return &arrayqQueue{
+func newArrayQueue(queCapacity int) *arrayQueue {
+	return &arrayQueue{
 		nums:        make([]int, queCapacity),
 		queCapacity: queCapacity,
 		front:       0,
@@ -19,17 +19,17 @@ func newArrayQueue(queCapacity int) *arrayqQueue {
 }
 
 // 获取队列长度
-func (q *arrayqQueue) size() int {
+func (q *arrayQueue) size() int {
 	return q.queSize
 }
 
 // 判断队列是否为空
-func (q *arrayqQueue) isEmpty() bool {
+func (q *arrayQueue) isEmpty() bool {
 	return q.queSize == 0
 }
 
 // 入队
-func (q *arrayqQueue) push(num int) {
+func (q *arrayQueue) push(num int) {
 	// 当 rear == queCapacity 表示队列已满
 	if q.queSize == q.queCapacity {
 		return
@@ -43,7 +43,25 @@ func (q *arrayqQueue) push(num int) {
 }
 
 // 出队
+func (q *arrayQueue) pop() any {
+	num := q.peek()
+	if num == nil {
+		return nil
+	}
+
+	// 队首指针向后移动一位，若越过尾部，则返回到数组头部
+	q.front = (q.front + 1) % q.queCapacity
+	q.queSize--
+	return num
+}
 
 // 访问队首元素
+/* 访问队首元素 */
+func (q *arrayQueue) peek() any {
+	if q.isEmpty() {
+		return nil
+	}
+	return q.nums[q.front]
+}
 
 // 获取 Slice 用于打印
