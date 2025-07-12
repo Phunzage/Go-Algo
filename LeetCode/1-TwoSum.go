@@ -11,7 +11,7 @@ package leetcode
 // 传入数组 nums 和给定的数字 target
 func twoSum(nums []int, target int) []int {
 	// 定义一个存放另一半数字的map
-	m := make(map[int]int)
+	m := map[int]int{}
 	// 循环遍历数组
 	for i := range nums {
 		// 找出当前所需要的能组合 target 的另一半数字 定为 another
