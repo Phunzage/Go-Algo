@@ -7,7 +7,7 @@ import "fmt"
 func binarySearch(nums []int, target int) int {
 	i, j := 0, len(nums)-1
 	for i <= j {
-		m := i + (j-i)/2
+		m := i + (j-i)/2 //避免溢出
 		if target > nums[m] {
 			i = m + 1
 		} else if target < nums[m] {
